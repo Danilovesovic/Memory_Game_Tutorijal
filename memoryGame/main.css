@@ -1,0 +1,46 @@
+html,body {
+	margin: 0;
+	padding: 0;
+}
+#wrapp {
+	width: 100%;
+	min-height: 100vh;
+}
+.container {
+	width: 400px;
+	height: 400px;
+	border: 2px solid #eee;
+	margin: 70px auto;
+}
+.box {
+	width: 100px;
+	height: 100px;
+	box-sizing: border-box;
+	border: 1px solid black;
+	float: left;
+	position: relative;
+}
+.back {
+	width: 100px;
+	height: 100px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	position: absolute;
+	transform: perspective(900px) rotateY(180deg);
+	backface-visibility: hidden;
+	transition: transform 0.7s linear;
+	font-size: 2em;
+	line-height: 100px;
+	text-align: center;
+}
+.front {
+	width: 100px;
+	height: 100px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	position: absolute;
+	background: orange;
+	backface-visibility: hidden;
+	transition: transform 0.7s linear;
+
+}

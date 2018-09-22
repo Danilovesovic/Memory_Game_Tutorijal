@@ -4,8 +4,9 @@ jQuery(document).ready(function($) {
 		var container = $('.container');
 		var itemAr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8];
 		var testCliks = 0;
-		var savedAr = [];
+		var savedAr = [];         
 		var kraj = 0;
+ 		var vreme = 30; // vreme predvidjeno da se predje igrica
 
 	for (var i = 0; i < 16; i++) {
 		var rand = Math.floor(Math.random()*itemAr.length);
@@ -13,7 +14,24 @@ jQuery(document).ready(function($) {
 		itemAr.splice(rand,1);
 	};
 
-	var boxes = $('.box');
+	var boxes = $('.box');// TIME LEFT 
+     function timeLeft() {
+    	var a = setInterval(function(){
+    		vreme--;
+    		if (vreme === 0) {
+    			alert('Vreme je isteklo');
+    			boxes.off();
+    			clearInterval(a);
+    			$('.timers').text('GAME OVER'); 
+    		}else {
+    			$('.timers').text('Ostalo je jos ' + vreme + ' sekundi'); 
+    		}
+    	},1000)
+     }
+     timeLeft();
+     
+     //
+	
 	start();
 	function start () {
 		boxes.click(function() {

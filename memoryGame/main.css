@@ -44,3 +44,8 @@ html,body {
 	transition: transform 0.7s linear;
 
 }
+.timers {
+ 	font-size: 3em;
+ 	position: relative;
+ 	left: 500px;
+ }
